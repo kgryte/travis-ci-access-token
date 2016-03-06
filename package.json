@@ -1,6 +1,6 @@
 {
   "name": "travis-ci-access-token",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Retrieve an access token to authenticate against Travis CI.",
   "author": {
     "name": "Athan Reines",

@@ -1,0 +1,9 @@
+{
+	"protocol": "https",
+	"hostname": "api.travis-ci.org",
+	"port": 443,
+	"pathname": "/auth/github",
+	"method": "POST",
+	"useragent": "https://github.com/kgryte/travis-ci-access-token",
+	"accept": "application/vnd.travis-ci.2+json"
+}

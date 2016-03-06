@@ -80,6 +80,9 @@ else if ( process.env.GITHUB_TOKEN ) {
 if ( token ) {
 	opts.token = token;
 }
+if ( args.useragent ) {
+	opts.useragent = args.useragent;
+}
 
 
 // CREATE TOKEN //

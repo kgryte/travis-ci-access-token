@@ -1,6 +1,7 @@
 {
 	"string": [
-		"token"
+		"token",
+		"useragent"
 	],
 	"boolean": [
 		"help",
@@ -12,6 +13,9 @@
 		],
 		"version": [
 			"V"
+		],
+		"useragent": [
+			"ua"
 		]
 	}
 }

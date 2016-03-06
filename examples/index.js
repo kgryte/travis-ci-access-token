@@ -3,7 +3,7 @@
 var create = require( './../lib' );
 
 var opts = {
-	'token': '<your_token_goes_here>'
+	'token': '<your_github_token_goes_here>'
 };
 
 create( opts, clbk );

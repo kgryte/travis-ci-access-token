@@ -84,17 +84,19 @@ tape( 'function returns an error to a provided callback if an error is encounter
 	var opts;
 
 	create = proxyquire( './../lib/create.js', {
-		'./query.js': query
+		'./factory.js': factory
 	});
 
 	opts = getOpts();
 	create( opts, done );
 
-	function query( opts, clbk ) {
-		setTimeout( onTimeout, 0 );
-		function onTimeout() {
-			clbk( new Error( 'beep' ) );
-		}
+	function factory( opts, clbk ) {
+		return function create() {
+			setTimeout( onTimeout, 0 );
+			function onTimeout() {
+				clbk( new Error( 'beep' ) );
+			}
+		};
 	}
 
 	function done( error ) {
@@ -110,7 +112,7 @@ tape( 'function returns response data to a provided callback', function test( t 
 	var opts;
 
 	create = proxyquire( './../lib/create.js', {
-		'./query.js': query
+		'./factory.js': factory
 	});
 
 	expected = results;
@@ -118,11 +120,13 @@ tape( 'function returns response data to a provided callback', function test( t 
 	opts = getOpts();
 	create( opts, done );
 
-	function query( opts, clbk ) {
-		setTimeout( onTimeout, 0 );
-		function onTimeout() {
-			clbk( null, results );
-		}
+	function factory( opts, clbk ) {
+		return function create() {
+			setTimeout( onTimeout, 0 );
+			function onTimeout() {
+				clbk( null, results );
+			}
+		};
 	}
 
 	function done( error, data ) {

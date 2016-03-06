@@ -51,7 +51,7 @@ The `function` accepts the following `options`:
 	-	`write:repo_hook`
 *	__useragent__: user agent `string`.
 
-To [authenticate][travis-ci-authenticate] with Travis CI, Travis CI __requires__ a Github [access token][github-token].
+To [authenticate][travis-ci-authenticate] with Travis CI, Travis CI __requires__ a Github [access token][github-token]. To specify a Github [access token][github-token], set the `token` option.
 
 ``` javascript
 var opts = {

@@ -9,7 +9,7 @@ var parseArgs = require( 'minimist' );
 var notifier = require( 'update-notifier' );
 var pkg = require( './../package.json' );
 var opts = require( './opts.json' );
-var create = require( './../lib' );
+var retrieve = require( './../lib' );
 
 
 // VARIABLES //
@@ -85,13 +85,13 @@ if ( args.useragent ) {
 }
 
 
-// CREATE TOKEN //
+// RETRIEVE TOKEN //
 
-create( opts, clbk );
+retrieve( opts, clbk );
 
 /**
 * FUNCTION: clbk( error, results )
-*	Callback invoked upon creating a token.
+*	Callback invoked upon retrieving a token.
 *
 * @private
 * @param {Error|Null} error - error object

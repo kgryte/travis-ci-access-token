@@ -20,7 +20,7 @@ tape( 'file exports a function', function test( t ) {
 	t.end();
 });
 
-tape( 'function returns an error to a provided callback if an error is encountered when creating a token', function test( t ) {
+tape( 'function returns an error to a provided callback if an error is encountered when retrieving a token', function test( t ) {
 	var query;
 	var opts;
 

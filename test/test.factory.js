@@ -68,7 +68,7 @@ tape( 'function returns a function', function test( t ) {
 	t.end();
 });
 
-tape( 'function returns a function which returns an error to a provided callback if an error is encountered when creating a token', function test( t ) {
+tape( 'function returns a function which returns an error to a provided callback if an error is encountered when retrieving a token', function test( t ) {
 	var factory;
 	var opts;
 	var fcn;

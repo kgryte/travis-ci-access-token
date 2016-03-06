@@ -15,11 +15,11 @@ $ npm install travis-ci-access-token
 ## Usage
 
 ``` javascript
-var createToken = require( 'travis-ci-access-token' );
+var retrieve = require( 'travis-ci-access-token' );
 ```
 
-<a name="create-token"></a>
-#### createToken( options, clbk )
+<a name="retrieve-token"></a>
+#### retrieve( options, clbk )
 
 Retrieve an access token to [authenticate][travis-ci-authenticate] against Travis CI.
 
@@ -28,7 +28,7 @@ var opts = {
 	'token': 'tkjorjk34ek3nj4!' // Github token
 };
 
-createToken( opts, clbk );
+retrieve( opts, clbk );
 
 function clbk( error, results ) {
 	if ( error ) {
@@ -58,7 +58,7 @@ var opts = {
 	'token': 'tkjorjk34ek3nj4!'
 };
 
-createToken( opts, clbk );
+retrieve( opts, clbk );
 ```
 
 To specify a user agent, set the `useragent` option.
@@ -69,11 +69,11 @@ var opts = {
 	'useragent': 'hello-github!'
 };
 
-createToken( opts, clbk );
+retrieve( opts, clbk );
 ```
 
 
-#### createToken.factory( options, clbk )
+#### retrieve.factory( options, clbk )
 
 Creates a reusable `function`.
 
@@ -83,28 +83,28 @@ var opts = {
 	'useragent': 'hello-github!'
 };
 
-var create = createToken.factory( opts, clbk );
+var newToken = retrieve.factory( opts, clbk );
 
-create();
-create();
-create();
+newToken();
+newToken();
+newToken();
 // ...
 ```
 
-The factory method accepts the same `options` as [`createToken()`](#create-token).
+The factory method accepts the same `options` as [`retrieve()`](#retrieve-token).
 
 
 ---
 ## Examples
 
 ``` javascript
-var createToken = require( 'travis-ci-access-token' );
+var retrieve = require( 'travis-ci-access-token' );
 
 var opts = {
 	'token': '<your_github_token_goes_here>'
 };
 
-create( opts, clbk );
+retrieve( opts, clbk );
 
 function clbk( error, results ) {
 	if ( error ) {

@@ -5,7 +5,7 @@
 var tape = require( 'tape' );
 var proxyquire = require( 'proxyquire' );
 var noop = require( '@kgryte/noop' );
-var create = require( './../lib/create.js' );
+var retrieve = require( './../lib/retrieve.js' );
 
 
 // FIXTURES //
@@ -17,7 +17,7 @@ var results = require( './fixtures/results.json' );
 // TESTS //
 
 tape( 'file exports a function', function test( t ) {
-	t.equal( typeof create, 'function', 'export is a function' );
+	t.equal( typeof retrieve, 'function', 'export is a function' );
 	t.end();
 });
 
@@ -43,7 +43,7 @@ tape( 'function throws if provided an invalid options argument', function test( 
 
 	function badValue( value ) {
 		return function badValue() {
-			create({
+			retrieve({
 				'token': value
 			}, noop );
 		};
@@ -74,24 +74,24 @@ tape( 'function throws if provided a callback argument which is not a function',
 
 	function badValue( value ) {
 		return function badValue() {
-			create( opts, value );
+			retrieve( opts, value );
 		};
 	}
 });
 
-tape( 'function returns an error to a provided callback if an error is encountered when creating a token', function test( t ) {
-	var create;
+tape( 'function returns an error to a provided callback if an error is encountered when retrieving a token', function test( t ) {
+	var retrieve;
 	var opts;
 
-	create = proxyquire( './../lib/create.js', {
+	retrieve = proxyquire( './../lib/retrieve.js', {
 		'./factory.js': factory
 	});
 
 	opts = getOpts();
-	create( opts, done );
+	retrieve( opts, done );
 
 	function factory( opts, clbk ) {
-		return function create() {
+		return function retrieve() {
 			setTimeout( onTimeout, 0 );
 			function onTimeout() {
 				clbk( new Error( 'beep' ) );
@@ -108,20 +108,20 @@ tape( 'function returns an error to a provided callback if an error is encounter
 
 tape( 'function returns response data to a provided callback', function test( t ) {
 	var expected;
-	var create;
+	var retrieve;
 	var opts;
 
-	create = proxyquire( './../lib/create.js', {
+	retrieve = proxyquire( './../lib/retrieve.js', {
 		'./factory.js': factory
 	});
 
 	expected = results;
 
 	opts = getOpts();
-	create( opts, done );
+	retrieve( opts, done );
 
 	function factory( opts, clbk ) {
-		return function create() {
+		return function retrieve() {
 			setTimeout( onTimeout, 0 );
 			function onTimeout() {
 				clbk( null, results );

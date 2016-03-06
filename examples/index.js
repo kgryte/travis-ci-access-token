@@ -1,12 +1,12 @@
 'use strict';
 
-var create = require( './../lib' );
+var retrieve = require( './../lib' );
 
 var opts = {
 	'token': '<your_github_token_goes_here>'
 };
 
-create( opts, clbk );
+retrieve( opts, clbk );
 
 function clbk( error, results ) {
 	if ( error ) {

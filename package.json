@@ -43,7 +43,8 @@
     "request",
     "retrieve",
     "create",
-    "fetch"
+    "fetch",
+    "exchange"
   ],
   "bugs": {
     "url": "https://github.com/kgryte/travis-ci-access-token/issues"

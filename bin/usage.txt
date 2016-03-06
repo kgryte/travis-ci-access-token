@@ -1,0 +1,9 @@
+
+Usage: travistoken [options]
+
+Options:
+
+  -h,  --help                Print this message.
+  -V,  --version             Print the package version.
+       --token token         Github access token.
+

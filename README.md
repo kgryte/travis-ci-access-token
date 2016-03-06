@@ -21,7 +21,7 @@ var retrieve = require( 'travis-ci-access-token' );
 <a name="retrieve-token"></a>
 #### retrieve( options, clbk )
 
-Retrieve an access token to [authenticate][travis-ci-authenticate] against Travis CI.
+Retrieves an access token to [authenticate][travis-ci-authenticate] against Travis CI.
 
 ``` javascript
 var opts = {

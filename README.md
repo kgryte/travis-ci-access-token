@@ -49,24 +49,12 @@ The `function` accepts the following `options`:
 	-	`repo_deployment`
 	-	`repo:status`
 	-	`write:repo_hook`
-*	__useragent__: user agent `string`.
 
 To [authenticate][travis-ci-authenticate] with Travis CI, Travis CI __requires__ a Github [access token][github-token]. To specify a Github [access token][github-token], set the `token` option.
 
 ``` javascript
 var opts = {
 	'token': 'tkjorjk34ek3nj4!'
-};
-
-retrieve( opts, clbk );
-```
-
-To specify a user agent, set the `useragent` option.
-
-``` javascript
-var opts = {
-	'token': 'tkjorjk34ek3nj4!',
-	'useragent': 'hello-github!'
 };
 
 retrieve( opts, clbk );
@@ -79,8 +67,7 @@ Creates a reusable `function`.
 
 ``` javascript
 var opts = {
-	'token': 'tkjorjk34ek3nj4!',
-	'useragent': 'hello-github!'
+	'token': 'tkjorjk34ek3nj4!'
 };
 
 var newToken = retrieve.factory( opts, clbk );
@@ -143,7 +130,6 @@ Options:
   -h,  --help                Print this message.
   -V,  --version             Print the package version.
        --token token         Github access token.
-  -ua, --useragent ua        User agent.
 ```
 
 

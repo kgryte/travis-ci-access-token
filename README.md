@@ -49,12 +49,24 @@ The `function` accepts the following `options`:
 	-	`repo_deployment`
 	-	`repo:status`
 	-	`write:repo_hook`
+*	__hostname__: endpoint hostname. Default: `'api.travis-ci.org'`.
 
 To [authenticate][travis-ci-authenticate] with Travis CI, Travis CI __requires__ a Github [access token][github-token]. To specify a Github [access token][github-token], set the `token` option.
 
 ``` javascript
 var opts = {
 	'token': 'tkjorjk34ek3nj4!'
+};
+
+retrieve( opts, clbk );
+```
+
+By default, the `function` retrieves an access token from the Travis CI API for open source. To retrieve from a different [Travis CI API][travis-api] endpoint, set the `hostname` option.
+
+``` javascript
+var opts = {
+	'token': 'tkjorjk34ek3nj4!',
+	'hostname': 'api.travis-ci.com'
 };
 
 retrieve( opts, clbk );
@@ -67,7 +79,8 @@ Creates a reusable `function`.
 
 ``` javascript
 var opts = {
-	'token': 'tkjorjk34ek3nj4!'
+	'token': 'tkjorjk34ek3nj4!',
+	'hostname': 'api.travis-ci.com'
 };
 
 var newToken = retrieve.factory( opts, clbk );

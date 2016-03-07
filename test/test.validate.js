@@ -93,6 +93,32 @@ tape( 'if provided a `useragent` option which is not a primitive string, the fun
 	t.end();
 });
 
+tape( 'if provided a `hostname` option which is not a primitive string, the function returns a type error', function test( t ) {
+	var values;
+	var err;
+	var i;
+
+	values = [
+		5,
+		NaN,
+		null,
+		undefined,
+		true,
+		[],
+		{},
+		function(){}
+	];
+
+	for ( i = 0; i < values.length; i++ ) {
+		err = validate( {}, {
+			'token': 'abcdefg',
+			'hostname': values[i]
+		});
+		t.ok( err instanceof TypeError, 'returns type error when provided ' + values[i] );
+	}
+	t.end();
+});
+
 tape( 'the function returns `null` if all options are valid', function test( t ) {
 	var options;
 	var opts;
@@ -100,7 +126,8 @@ tape( 'the function returns `null` if all options are valid', function test( t )
 
 	options = {
 		'token': 'abcdefg',
-		'useragent': 'beeper-booper'
+		'useragent': 'beeper-booper',
+		'hostname': 'api.travis-ci.com'
 	};
 
 	opts = {};

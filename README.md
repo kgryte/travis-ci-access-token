@@ -129,6 +129,7 @@ Options:
 
   -h,  --help                Print this message.
   -V,  --version             Print the package version.
+       --hostname host       Hostname. Default: api.travis-ci.org.
        --token token         Github access token.
 ```
 

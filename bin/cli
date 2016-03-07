@@ -68,6 +68,9 @@ if ( args.version ) {
 
 opts = {};
 
+if ( args.hostname ) {
+	opts.hostname = args.hostname;
+}
 if ( args.token ) {
 	token = args.token;
 }

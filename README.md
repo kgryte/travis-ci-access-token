@@ -265,4 +265,5 @@ Copyright &copy; 2016. Athan Reines.
 [github-token]: https://github.com/settings/tokens/new
 [github-scopes]: https://developer.github.com/v3/oauth/#scopes
 
+[travis-api]: https://docs.travis-ci.com/api
 [travis-ci-authenticate]: https://docs.travis-ci.com/api?http#authentication

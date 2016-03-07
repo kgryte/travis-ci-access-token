@@ -2,7 +2,8 @@
 
 function getOpts() {
 	var opts = {
-		'token': 'abcdefg'
+		'token': 'abcdefg',
+		'hostname': 'api.travis-ci.com'
 	};
 	return opts;
 }
